@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulflow: Eleva tu Medicina</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-bg: #FFFFFF;
+            --color-text: #000000;
+            --color-gold: #B8860B;
+            --color-beige: #F5F5DC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+        
+        /* Header */
+        .navbar {
+            background-color: var(--color-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--color-text);
+            font-weight: 700;
+        }
+        
+        .btn-gold {
+            background-color: var(--color-gold);
+            color: var(--color-bg);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gold:hover {
+            background-color: #9A7209;
+            color: var(--color-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(184, 134, 11, 0.3);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-list {
+            list-style: none;
+            font-size: 1.125rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+        
+        .hero-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .hero-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+            font-weight: 700;
+        }
+        
+        .hero-video {
+            max-width: 800px;
+            margin: 3rem auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero-video img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .btn-large {
+            font-size: 1.25rem;
+            padding: 1rem 3rem;
+            margin: 2rem 0 1rem;
+        }
+        
+        .small-text {
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        /* Transformation Section */
+        .transformation-section {
+            padding: 80px 0;
+            background-color: var(--color-bg);
+        }
+        
+        .transformation-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .dolor-block {
+            background-color: var(--color-beige);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .dolor-block h3 {
+            color: #666;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .solucion-block h3 {
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .transformation-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .transformation-list li {
+            padding: 1rem 0;
+            font-size: 1.125rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .transformation-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 0;
+            background-color: var(--color-bg);
+        }
+        
+        .benefits-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            padding: 80px 0;
+            background-color: var(--color-beige);
+        }
+        
+        .testimonial-card {
+            background-color: var(--color-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-quote {
+            font-size: 1.125rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .testimonial-quote:before {
+            content: """;
+            color: var(--color-gold);
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--color-gold);
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+        }
+        
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-card {
+            border: 2px solid #eee;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--color-gold);
+            border-width: 3px;
+            position: relative;
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-gold);
+            color: var(--color-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        
+        .pricing-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 2rem 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-gold);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--color-beige);
+        }
+        
+        .faq-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .accordion-button {
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--color-gold);
+            color: var(--color-bg);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+        }
+        
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 0;
+            background-color: var(--color-gold);
+            color: var(--color-bg);
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            color: var(--color-bg);
+            margin-bottom: 2rem;
+        }
+        
+        .btn-white {
+            background-color: var(--color-bg);
+            color: var(--color-gold);
+            border: none;
+            padding: 1rem 3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+        
+        .btn-white:hover {
+            background-color: #f0f0f0;
+            color: var(--color-gold);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-card {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/Marca-SoulFlow-FC-fondo-blanco (3).png" alt="SoulFlow Logo" style="height: 40px;">
+            </a>
+            <button class="btn btn-gold">QUIERO SER PARTE</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>La comunidad donde las psicólogas vuelven a disfrutar su profesión, sin perder su esencia.</h1>
+            
+            <ul class="hero-list">
+                <li>¿Te sientes atrapada en la rutina de sesión tras sesión sin tiempo para ti?</li>
+                <li>¿Sientes que tu práctica necesita renovarse pero no sabes por dónde empezar?</li>
+                <li>¿Deseas una comunidad de colegas que realmente entienda tus desafíos únicos?</li>
+            </ul>
+            
+            <div class="hero-video">
+                <img src="/assets/pexels-moose-photos-170195-1036622.jpg" alt="Profesional de la salud mental">
+            </div>
+            
+            <button class="btn btn-gold btn-large">👉 QUIERO SER PARTE DE SOULFLOW</button>
+            <p class="small-text">Acceso inmediato al roadmap de crecimiento. Sin permanencia.</p>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section class="transformation-section">
+        <div class="container">
+            <h2>✨ Bienvenida a Soulflow: Tu Práctica no Necesita Más Carga, Necesita Más Alma</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dolor-block">
+                        <h3>💭 El Dolor</h3>
+                        <ul class="transformation-list">
+                            <li>Agotamiento emocional constante</li>
+                            <li>Sensación de estancamiento profesional</li>
+                            <li>Falta de recursos actualizados y herramientas efectivas</li>
+                            <li>Soledad en el camino terapéutico</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="solucion-block">
+                        <h3>💫 La Transformación</h3>
+                        <ul class="transformation-list">
+                            <li>Renovación de tu pasión por la psicología</li>
+                            <li>Crecimiento profesional continuo y sostenible</li>
+                            <li>Acceso a herramientas prácticas e innovadoras</li>
+                            <li>Red de apoyo profesional comprometida</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-gold btn-large">QUIERO RECUPERAR LA ALEGRÍA DE MI VOCACIÓN</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>🌸 Beneficios Reales de Soulflow</h2>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎓</div>
+                        <h4>Clases Magistrales</h4>
+                        <p>Contenido exclusivo de expertos en diversas áreas de la psicología</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">👥</div>
+                        <h4>Encuentros Comunitarios</h4>
+                        <p>Espacios seguros para compartir experiencias y crecer juntas</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📋</div>
+                        <h4>Plantillas y Recursos</h4>
+                        <p>Materiales listos para implementar en tu práctica diaria</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🧘</div>
+                        <h4>Bienestar Integral</h4>
+                        <p>Herramientas para cuidar tu salud mental y emocional</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🌟</div>
+                        <h4>Desarrollo Profesional</h4>
+                        <p>Roadmap personalizado para tu crecimiento continuo</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💬</div>
+                        <h4>Red de Apoyo</h4>
+                        <p>Comunidad activa disponible 24/7</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h3 class="text-center mb-4" style="color: var(--color-gold);">Lo que hace única a Soulflow</h3>
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🌱 No estás sola</h4>
+                            <p>Una comunidad que entiende exactamente por lo que estás pasando</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🌸 Avanzas a tu ritmo</h4>
+                            <p>Sin presiones, sin plazos imposibles. Contenido disponible cuando lo necesites</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>💎 Enfoque holístico</h4>
+                            <p>Integramos lo profesional, lo personal y lo espiritual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Lo que dicen nuestras colegas</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="/assets/pexels-shvets-production-7176076.jpg" alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                        <p class="testimonial-quote">Soulflow me devolvió la pasión por mi profesión. Encontré un espacio donde puedo ser vulnerable y crecer profesionalmente al mismo tiempo.</p>
+                        <p class="testimonial-author">- Dra. María González</p>
+                        <p class="small-text">Psicóloga Clínica</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <img src="/assets/pexels-shvets-production-7176185.jpg" alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                        <p class="testimonial-quote">La comunidad es increíble. Por fin siento que no estoy sola en este camino. Las herramientas y recursos han transformado mi práctica.</p>
+                        <p class="testimonial-author">- Lic. Ana Martínez</p>
+                        <p class="small-text">Terapeuta Humanista</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                         <img src="/assets/pexels-shvets-production-7176185.jpg" alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                        <p class="testimonial-quote">Invertir en Soulflow fue la mejor decisión profesional que he tomado. Me siento renovada y con herramientas concretas para crecer.</p>
+                        <p class="testimonial-author">- Mtra. Carmen López</p>
+                        <p class="small-text">Psicóloga Educativa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <h2>🌸 Elige tu Plan de Expansión Consciente</h2>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3>Básico</h3>
+                        <div class="pricing-price">$997<span style="font-size: 1rem;">/mes</span></div>
+                        <ul class="pricing-features">
+                            <li>Acceso a todas las clases magistrales</li>
+                            <li>Biblioteca de recursos descargables</li>
+                            <li>Comunidad privada</li>
+                            <li>1 encuentro grupal mensual</li>
+                        </ul>
+                        <button class="btn btn-gold">QUIERO EL PLAN BÁSICO</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">MÁS POPULAR</span>
+                        <h3>Pro</h3>
+                        <div class="pricing-price">$1,497<span style="font-size: 1rem;">/mes</span></div>
+                        <ul class="pricing-features">
+                            <li>Todo lo del Plan Básico</li>
+                            <li>2 sesiones de mentoría grupal al mes</li>
+                            <li>Acceso prioritario a nuevos contenidos</li>
+                            <li>Plantillas y herramientas premium</li>
+                            <li>Certificados de participación</li>
+                        </ul>
+                        <button class="btn btn-gold">QUIERO EL PLAN PRO</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <h3>Personal</h3>
+                        <div class="pricing-price">$2,497<span style="font-size: 1rem;">/mes</span></div>
+                        <ul class="pricing-features">
+                            <li>Todo lo del Plan Pro</li>
+                            <li>1 sesión individual mensual</li>
+                            <li>Roadmap personalizado</li>
+                            <li>Prioridad en eventos especiales</li>
+                            <li>Acceso al directorio exclusivo</li>
+                        </ul>
+                        <button class="btn btn-gold">QUIERO EL PLAN PERSONAL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>⏰ ¡Las puertas están abiertas por tiempo limitado!</h2>
+            <p class="lead mb-4">Esto es para ti si...</p>
+            <ul class="list-unstyled mb-5" style="max-width: 600px; margin: 0 auto; text-align: left;">
+                <li class="mb-2">✓ Eres psicóloga o terapeuta buscando renovación profesional</li>
+                <li class="mb-2">✓ Deseas una comunidad de apoyo genuino</li>
+                <li class="mb-2">✓ Quieres herramientas prácticas y actualizadas</li>
+                <li class="mb-2">✓ Buscas equilibrio entre tu vida personal y profesional</li>
+                <li class="mb-2">✓ Estás lista para invertir en tu crecimiento</li>
+            </ul>
+            <button class="btn btn-white">👉 QUIERO SER PARTE DE SOULFLOW AHORA</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <div class="about-image">
+                        <img src="/assets/Fanny.png" alt="Estefanía Aburto">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <h2>Sobre Mí</h2>
+                    <h3 style="color: var(--color-gold); margin-bottom: 1.5rem;">Estefanía Aburto</h3>
+                    <p class="lead">Fundadora de Soulflow</p>
+                    <p>Soy psicóloga clínica con más de 10 años de experiencia en consulta privada y formación de profesionales de la salud mental. A lo largo de mi camino, experimenté el mismo agotamiento y estancamiento que muchas colegas enfrentan hoy.</p>
+                    <p>Creé Soulflow después de darme cuenta de que necesitamos más que técnicas y teorías: necesitamos una comunidad que nos sostenga, recursos que nos inspiren y un espacio donde podamos ser vulnerables mientras crecemos profesionalmente.</p>
+                    <p>Mi misión es ayudar a psicólogas y terapeutas a reconectar con su vocación, construir prácticas sostenibles y encontrar el equilibrio entre cuidar a otros y cuidarse a sí mismas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            ¿Qué incluye la membresía de Soulflow?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Dependiendo del plan que elijas, tendrás acceso a clases magistrales, encuentros comunitarios, plantillas descargables, sesiones de mentoría y una comunidad privada de profesionales. Todo diseñado para apoyar tu crecimiento profesional y personal.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            ¿Hay permanencia mínima?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, puedes cancelar tu membresía en cualquier momento. Creemos en ofrecer valor continuo que te haga querer quedarte, no en contratos que te obliguen.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            ¿Puedo cambiar de plan después?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Sí, puedes actualizar o cambiar tu plan en cualquier momento según tus necesidades y objetivos evolucionen.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            ¿Las clases son en vivo o grabadas?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Ofrecemos ambas opciones. Las clases magistrales están grabadas y disponibles 24/7, mientras que los encuentros comunitarios y sesiones de mentoría son en vivo. Todas las sesiones en vivo se graban para que puedas verlas después.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            ¿Necesito experiencia previa en algún enfoque terapéutico específico?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            No, Soulflow está diseñado para psicólogas de todos los enfoques y niveles de experiencia. Celebramos la diversidad de perspectivas en nuestra comunidad.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                            ¿Qué pasa si no puedo asistir a los encuentros en vivo?
+                        </button>
+                    </h2>
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Todas las sesiones se graban y estarán disponibles en tu área de miembros. Puedes verlas cuando mejor te convenga.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--color-text); color: var(--color-bg); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <p>&copy; 2025 Soulflow. Todos los derechos reservados.</p>
+            <p class="mt-2">
+                <a href="#" style="color: var(--color-gold); text-decoration: none; margin: 0 1rem;">Términos y Condiciones</a>
+                <a href="#" style="color: var(--color-gold); text-decoration: none; margin: 0 1rem;">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
