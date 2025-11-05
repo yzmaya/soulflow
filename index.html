@@ -91,6 +91,7 @@
         .hero-list {
             list-style: none;
             font-size: 1.125rem;
+            padding-top: 20px;
             max-width: 800px;
             margin: 2rem auto;
             text-align: left;
@@ -123,9 +124,34 @@
             height: auto;
         }
 
+        /*<!-- todo --> NUEVA SECCIÓN DESCRIPCION*/
+
+        .descripcion {
+            background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-bg) 100%);
+            padding: 50px;
+            position: relative;
+        }
+
+        .descripcion h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5em;
+            color: var(--color-text);
+        }
+
+        .descripcion p {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         /* Video YouTube Estelar */
         .video-estelar {
-            background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-bg) 100%);
+            /*<!-- todo --> background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-bg) 100%);*/
             padding: 80px 0;
             position: relative;
         }
@@ -136,6 +162,7 @@
             margin-bottom: 1rem;
             color: var(--color-text);
         }
+
 
         .video-estelar .subtitle {
             text-align: center;
@@ -168,6 +195,27 @@
             border: none;
         }
 
+        .video-list-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 0;
+            /* Aspect ratio 16  :9 */
+            height: 28em;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.495);
+        }
+
+        .video-list-container iframe {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
 
         .btn-large {
             font-size: 1.25rem;
@@ -184,6 +232,7 @@
         .transformation-section {
             padding: 80px 0;
             background-color: var(--color-bg);
+            background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-bg) 100%);
         }
 
         .transformation-section h2 {
@@ -338,6 +387,14 @@
             margin-bottom: 1rem;
         }
 
+        .pricing-card p {
+            font-style: italic;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
         .pricing-price {
             font-size: 2.5rem;
             font-weight: 700;
@@ -463,19 +520,30 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
+        <!--class="video-list-container"-->
+        <!--todo Encapsule Iframe y UL en dos divs diferentes-->
         <div class="container">
-            <iframe class="embed-responsive-item"
-                src="https://www.youtube.com/embed/g1zpjcv-zAw?autoplay=1&mute=1&loop=1&playlist=g1zpjcv-zAw&modestbranding=1"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <ul class="hero-list">
-                <li>¿Te sientes atrapada en la rutina de sesión tras sesión sin tiempo para ti?</li>
-                <li>¿Sabes que tu práctica necesita expandirse, pero no sabes por dónde empezar?</li>
-                <li>¿Te gustaría atraer pacientes que realmente valoren tu trabajo y no solo depender de referidos?</li>
-                <li>¿Quieres vivir bien de tu profesión sin sentir que "vendes tu vocación"?</li>
-            </ul>
+
+            <!--todo Nueva clase "video-list-container"-->
+            <div class="video-list-container">
+                <!-- todo quite esta calse de IFRAME class="embed-responsive-item" -->
+                <iframe
+                    src="https://www.youtube.com/embed/g1zpjcv-zAw?autoplay=1&mute=1&loop=1&playlist=g1zpjcv-zAw&modestbranding=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="container">
+                <ul class="hero-list">
+                    <li>¿Te sientes atrapada en la rutina de sesión tras sesión sin tiempo para ti?</li>
+                    <li>¿Sabes que tu práctica necesita expandirse, pero no sabes por dónde empezar?</li>
+                    <li>¿Te gustaría atraer pacientes que realmente valoren tu trabajo y no solo depender de referidos?
+                    </li>
+                    <li>¿Quieres vivir bien de tu profesión sin sentir que "vendes tu vocación"?</li>
+                </ul>
+            </div>
 
             <div class="hero-video">
                 <img src="assets/pexels-moose-photos-170195-1036622.jpg" alt="Profesional de la salud mental">
@@ -485,6 +553,22 @@
                     SOULFLOW</button></a>
             <p class="small-text">Acceso inmediato. Sin permanencia. Con acompañamiento real.</p>
         </div>
+
+
+    </section>
+
+    <!--todo Dev_Dego Nueva sección-->
+    <section class="descripcion">
+        <h2>🌼 ¿Qué es Soulflow?</h2>
+        <p>
+            Soulflow es una membresía de marketing terapéutico consciente diseñada para psicólogas
+            y terapeutas que desean construir un consultorio rentable, sostenible y alineado con
+            su propósito y sobre todo con alma.
+        </p>
+        <p>
+            Aquí aprenderás a comunicar lo que haces con autenticidad, atraer pacientes ideales
+            y crear estabilidad económica, sin traicionar tu ética profesional.
+        </p>
     </section>
 
     <!-- Video Estelar Section -->
@@ -523,7 +607,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="solucion-block">
-                        <h3>💭 ¿te sientes identificada con al  menos un punto?</h3>
+                        <h3>💭 ¿te sientes identificada con al menos un punto?</h3>
                         <ul class="transformation-list">
                             <li>Depender solo de referidos y no saber cómo atraer pacientes</li>
                             <li>Sentir culpa al cobrar lo que realmente vales</li>
@@ -560,6 +644,7 @@
 
                 <h2>🌸 Lo que Obtienes al Ser Parte</h2>
                 <div class="col-md-12">
+                    <!-- todo Texto anterior
                     <div class="row">
                         <div class="col-md-4 text-center mb-4">
                             <h4>🌿 Reconectar con tu vocación</h4>
@@ -584,6 +669,34 @@
                         <div class="col-md-4 text-center mb-4">
                             <h4>💫 Marketing terapéutico ético</h4>
                             <p>Aprende a comunicarte sin sentir que estás "vendiendo"</p>
+                        </div>
+                    </div>
+                    -->
+                    <!-- todo Texto actualizado Dev_Dego-->
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🧠 Marketing Terapéutico Ético</h4>
+                            <p>Aprende a comunicarte sin sentir que estás “vendiendo”.</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🎯 Nicho, mensaje y propuesta de valor</h4>
+                            <p> Descubre a quién puedes ayudar más y cómo conectar con ellos.</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>💬 Estrategia de contenido consciente</h4>
+                            <p>Crea publicaciones que informen, conecten y conviertan.</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🪞 Sanar al sanador (modelo IFS)</h4>
+                            <p> Integra tus partes internas para fortalecer tu autoridad y confianza profesional.</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🌐 Construcción de marca personal terapéutica</h4>
+                            <p> Da coherencia a tu imagen, redes y mensaje profesional.</p>
+                        </div>
+                        <div class="col-md-4 text-center mb-4">
+                            <h4>🪶 Autocuidado del terapeuta</h4>
+                            <p>Herramientas emocionales y prácticas para sostenerte a largo plazo.</p>
                         </div>
                     </div>
                 </div>
@@ -698,6 +811,8 @@
                             <li>1 encuentro grupal mensual</li>
                         </ul>
                         <button class="btn btn-gold">QUIERO EL PLAN BÁSICO</button>
+                        <p>Ideal si eres de las que aprende, experimenta y crece sola, pero valora tener una comunidad
+                            de respaldo.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -713,6 +828,7 @@
                             <li>Certificados de participación</li>
                         </ul>
                         <button class="btn btn-gold">QUIERO EL PLAN PRO</button>
+                        <p>Perfecto si quieres apoyo, dirección y práctica acompañada.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -727,6 +843,8 @@
                             <li>Acceso al directorio exclusivo</li>
                         </ul>
                         <button class="btn btn-gold">QUIERO EL PLAN PERSONAL</button>
+                        <p>Perfecto si valoras el acompañamiento individual y quieres construir tu camino con dirección
+                            y coherencia.</p>
                     </div>
                 </div>
             </div>
@@ -795,9 +913,14 @@
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Soulflow no nació para vender cursos, sino para construir comunidad. La formación es solo
-                            uno de los encantos de esta membresía. El propósito principal es crear un espacio de apoyo,
-                            crecimiento y expansión entre psicólogas que desean ejercer con coherencia y bienestar.
+                            Seguramente ya te lo habías preguntado 🌸
+                            ¿Por qué una comunidad con tanto valor cuesta tan poco?<br>
+                            La razón es simple:
+                            <strong>Soulflow no nació para vender cursos, sino para construir comunidad.</strong><br>
+                            La formación es solo uno de los encantos de esta membresía. El propósito principal es crear
+                            un espacio de apoyo, crecimiento y expansión entre psicólogas que desean ejercer con
+                            coherencia
+                            y bienestar.
                         </div>
                     </div>
                 </div>
@@ -813,7 +936,9 @@
                         <div class="accordion-body">
                             Sí, claro 🌿 No somos una compañía telefónica 😉 Si en algún momento decides pausar tu
                             membresía, solo tienes que enviarnos un correo y listo. Tu acceso se cancelará sin
-                            penalizaciones ni complicaciones. Todo de manera transparente, ética y sin presiones.
+                            penalizaciones ni complicaciones. Ten en cuenta que si más adelante deseas volver,
+                            lo harás con el precio vigente en ese momento.<br>
+                            Todo de manera transparente, ética y sin presiones.
                         </div>
                     </div>
                 </div>
@@ -827,10 +952,16 @@
                     </h2>
                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Sí 💌 El soporte está disponible para acompañarte con tus dudas sobre la comunidad, las
-                            formaciones o los recursos. Por ahora, lo atiendo personalmente. Para que el espacio sea
-                            sostenible, te pedimos con cariño: antes de escribir por correo, comparte tu pregunta en el
-                            grupo, muchas veces lo que una necesita puede servirle también a otra.
+                            Sí 💌 <br> El soporte está disponible para acompañarte con tus dudas sobre la comunidad, las
+                            formaciones o los recursos. Por ahora, lo atiendo personalmente, aunque con el crecimiento
+                            de Soulflow
+                            iremos sumando más especialistas y mentoras invitadas. Para que el espacio sea
+                            sostenible y nutritivo, el soporte está pensado para resolver dudas, no para realizar el
+                            trabajo por ti.<br>
+                            💫 Te pedimos con cariño:
+                            Antes de escribir por correo, comparte tu pregunta en el grupo: muchas veces lo que una
+                            necesita,
+                            puede servirle también a otra.
                         </div>
                     </div>
                 </div>
@@ -844,10 +975,14 @@
                     </h2>
                     <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Incluye acceso a todas las clases sobre marketing terapéutico consciente, recursos
-                            descargables, mentorías, comunidad privada y encuentros con especialistas invitados. Tu
-                            membresía también te da acceso al roadmap formativo, al grupo de apoyo y al acompañamiento
-                            continuo dentro de la comunidad.
+                            Incluye acceso a todas las clases, recursos descargables, mentorías, comunidad privada y
+                            encuentros con especialistas invitados.
+                            A medida que la comunidad crece, vamos incorporando nuevas herramientas de marketing
+                            consciente y
+                            recursos terapéuticos para uso común, siempre respetando la ética profesional y el ritmo de
+                            cada una.
+                            Tu membresía también te da acceso al roadmap formativo, al grupo de apoyo y al
+                            acompañamiento continuo dentro de la comunidad.
                         </div>
                     </div>
                 </div>
@@ -861,10 +996,15 @@
                     </h2>
                     <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Por claridad y coherencia 🌿 El contenido de Soulflow es accesible desde el momento en que
-                            ingresas, y cada recurso tiene un valor real de aplicación inmediata. No realizamos
-                            devoluciones ya que el objetivo de la comunidad es profundizar, no probar. Si tienes dudas
-                            antes de entrar, pregúntame con total libertad.
+                            Por claridad y coherencia 🌿 <br>El contenido de Soulflow es accesible desde el momento en
+                            que
+                            ingresas, y cada recurso tiene un valor real de aplicación inmediata. <br>
+                            Prefiero ser transparente:
+                            No realizamos devoluciones, ya que el objetivo de la comunidad es
+                            <strong>profundizar, no probar.</strong>
+                            Si tienes dudas antes de entrar, <strong>pregúntame con total libertad.</strong><br>
+                            Estoy aquí para orientarte y asegurarme de que Soulflow sea el lugar adecuado para ti antes
+                            de que te unas.
                         </div>
                     </div>
                 </div>
@@ -878,10 +1018,11 @@
                     </h2>
                     <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Soulflow integra la neuropsicología, la teoría polivagal y el modelo IFS (Internal Family
-                            Systems) como base para comprender el sistema interno del terapeuta y fortalecer el Self
+                            Soulflow integra la <b>neuropsicología, la teoría polivagal y el modelo IFS (Internal Family
+                                Systems)</b> como base para comprender el sistema interno del terapeuta y fortalecer el
+                            Self
                             profesional. Aquí todas las corrientes terapéuticas son bienvenidas. Lo importante no es el
-                            método, sino la presencia y la coherencia desde la cual ejercemos.
+                            método, sino <b>la presencia y la coherencia desde la cual ejercemos.</b>
                         </div>
                     </div>
                 </div>
@@ -895,11 +1036,49 @@
                     </h2>
                     <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Encontrarás acompañamiento profesional y humano, mentorías en grupo, orientación
+                            Encontrarás <b>acompañamiento profesional y humano</b>, mentorías en grupo, orientación
                             personalizada por correo y una comunidad de colegas con las que podrás compartir tus logros,
-                            desafíos y aprendizajes. Además, al ser parte, podrás acceder a nuestro Directorio
-                            Profesional, una herramienta que amplía tu visibilidad y te conecta con consultantes que
-                            buscan terapeutas con mirada ética.
+                            desafíos y aprendizajes. Además, al ser parte, podrás acceder a nuestro <b>Directorio
+                                Profesional</b>, una herramienta que amplía tu visibilidad y te conecta con consultantes
+                            que
+                            buscan terapeutas con mirada ética, humana y consciente.<br>
+                            Si aún no eres parte, puedes <strong>sumarte a la lista de espera</strong>
+                            para acceder cuando lancemos la app oficial.<br>
+                            👉 [UNIRME A LA LISTA DE ESPERA]
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq8">
+                            🌱 ¿Qué necesito para empezar?
+                        </button>
+                    </h2>
+                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Solo tu disposición y tu deseo de crecer en comunidad 💫
+                            Una vez que te unas, recibirás un correo con acceso a la plataforma, la bienvenida y el
+                            roadmap inicial.<br>
+                            Desde ahí podrás avanzar a tu ritmo, con acompañamiento constante y el respaldo de colegas
+                            que caminan contigo.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq9">
+                            ✨ Soulflow es más que formación, es pertenencia.
+                        </button>
+                    </h2>
+                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Un espacio para reconectar con tu vocación, cuidar tu energía y expandir tu práctica con
+                            propósito.<br>
+                            👉 [QUIERO SER PARTE DE LA COMUNIDAD]
                         </div>
                     </div>
                 </div>
