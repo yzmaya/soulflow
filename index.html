@@ -112,7 +112,7 @@
         }
 
         .hero-video {
-            max-width: 800px;
+            max-width: 725px;
             margin: 3rem auto;
             border-radius: 10px;
             overflow: hidden;
@@ -123,8 +123,6 @@
             width: 100%;
             height: auto;
         }
-
-        /*<!-- todo --> NUEVA SECCIÓN DESCRIPCION*/
 
         .descripcion {
             background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-bg) 100%);
@@ -151,7 +149,7 @@
 
         /* Video YouTube Estelar */
         .video-estelar {
-            /*<!-- todo --> background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-bg) 100%);*/
+            
             padding: 80px 0;
             position: relative;
         }
@@ -196,7 +194,7 @@
         }
 
         .video-list-container {
-            max-width: 800px;
+            max-width: 250px;
             margin: 0 auto;
             position: relative;
             padding-bottom: 0;
@@ -521,16 +519,15 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <!--class="video-list-container"-->
-        <!--todo Encapsule Iframe y UL en dos divs diferentes-->
+        <!--Encapsule Iframe y UL en dos divs diferentes-->
         <div class="container">
-
-            <!--todo Nueva clase "video-list-container"-->
             <div class="video-list-container">
-                <!-- todo quite esta calse de IFRAME class="embed-responsive-item" -->
                 <iframe
-                    src="https://www.youtube.com/embed/g1zpjcv-zAw?autoplay=1&mute=1&loop=1&playlist=g1zpjcv-zAw&modestbranding=1"
+                    src="https://www.youtube.com/embed/PIqlvNTC-8U"
+                    title="Soulflow-membresia-60seg"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen>
                 </iframe>
             </div>
@@ -546,7 +543,7 @@
             </div>
 
             <div class="hero-video">
-                <img src="assets/pexels-moose-photos-170195-1036622.jpg" alt="Profesional de la salud mental">
+                <img src="assets/pexels-presentation-image.jpg" alt="Profesional de la salud mental">
             </div>
 
             <a href="#pricingsection"><button class="btn btn-gold btn-large">👉 QUIERO SER PARTE DE
@@ -557,7 +554,6 @@
 
     </section>
 
-    <!--todo Dev_Dego Nueva sección-->
     <section class="descripcion">
         <h2>🌼 ¿Qué es Soulflow?</h2>
         <p>
@@ -672,7 +668,7 @@
                         </div>
                     </div>
                     -->
-                    <!-- todo Texto actualizado Dev_Dego-->
+                    
                     <div class="row">
                         <div class="col-md-4 text-center mb-4">
                             <h4>🧠 Marketing Terapéutico Ético</h4>
@@ -763,8 +759,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="testimonial-card">
-                        <img src="https://github.com/user-attachments/assets/therapy-session-2.jpg"
-                            alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                        <!-- todo Comente las imagenes porque no se veian en la pagina-->
+                        <!--<img src="https://github.com/user-attachments/assets/therapy-session-2.jpg"
+                            alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;"> -->
                         <p class="testimonial-quote">Soulflow me enseñó a comunicar mi valor sin sentir culpa. Ahora
                             tengo pacientes que realmente valoran mi trabajo y mi consultorio es rentable y coherente.
                         </p>
@@ -774,8 +771,8 @@
                 </div>
                 <div class="col-md-4">
                     <div class="testimonial-card">
-                        <img src="https://github.com/user-attachments/assets/therapy-session-3.jpg"
-                            alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                        <!--<img src="https://github.com/user-attachments/assets/therapy-session-3.jpg"
+                            alt="Sesión terapéutica" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;"> -->
                         <p class="testimonial-quote">Aprendí a hacer marketing consciente sin traicionar mi ética. Las
                             herramientas y plantillas me ayudaron a atraer pacientes ideales para mi práctica.</p>
                         <p class="testimonial-author">- Lic. Ana Martínez</p>
@@ -798,7 +795,8 @@
     <section class="pricing-section" id="pricingsection">
         <div class="container">
             <h2>🌸 Elige tu Plan de Expansión Consciente</h2>
-
+            
+            <!--todo Se agregaron los links de compra-->
             <div class="row">
                 <div class="col-md-4">
                     <div class="pricing-card">
@@ -810,7 +808,9 @@
                             <li>Comunidad privada</li>
                             <li>1 encuentro grupal mensual</li>
                         </ul>
-                        <button class="btn btn-gold">QUIERO EL PLAN BÁSICO</button>
+                        <a href=" https://buy.stripe.com/fZueVc8dV2T271bfYtbo40o " target="_blank">
+                            <button class="btn btn-gold">QUIERO EL PLAN BÁSICO</button>
+                        </a>
                         <p>Ideal si eres de las que aprende, experimenta y crece sola, pero valora tener una comunidad
                             de respaldo.</p>
                     </div>
@@ -827,7 +827,9 @@
                             <li>Plantillas y herramientas premium</li>
                             <li>Certificados de participación</li>
                         </ul>
-                        <button class="btn btn-gold">QUIERO EL PLAN PRO</button>
+                        <a href="https://buy.stripe.com/9B6fZggKr2T2fxHcMhbo40n" target="_blank">
+                            <button class="btn btn-gold">QUIERO EL PLAN PRO</button>
+                        </a>
                         <p>Perfecto si quieres apoyo, dirección y práctica acompañada.</p>
                     </div>
                 </div>
@@ -842,7 +844,9 @@
                             <li>Prioridad en eventos especiales</li>
                             <li>Acceso al directorio exclusivo</li>
                         </ul>
-                        <button class="btn btn-gold">QUIERO EL PLAN PERSONAL</button>
+                        <a href="https://buy.stripe.com/bJe7sKcubctC2KVfYtbo40m " target="_blank">
+                            <button class="btn btn-gold">QUIERO EL PLAN PERSONAL</button>
+                        </a>
                         <p>Perfecto si valoras el acompañamiento individual y quieres construir tu camino con dirección
                             y coherencia.</p>
                     </div>
